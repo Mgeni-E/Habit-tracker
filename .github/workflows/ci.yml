@@ -1,0 +1,27 @@
+name: CI Pipeline
+
+# Run this workflow on pull requests targeting any branch (usually main or develop)
+on:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '16' # or your preferred Node version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run unit tests
+      run: npm test
