@@ -1,5 +1,5 @@
 name: CI Pipeline
-
+# This is where the code starts from
 # Run this workflow on pull requests targeting any branch (usually main or develop)
 on:
   pull_request:
